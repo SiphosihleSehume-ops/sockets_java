@@ -19,7 +19,7 @@ public class Client {
             BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
             ){
 
-            System.out.println("Server connected. Type JSSON and press enter: ");
+            System.out.println("Server connected. Type JSON and press enter: ");
 
             //Sending data to server
             String userInput;
@@ -34,5 +34,6 @@ public class Client {
                 if ("quit".equalsIgnoreCase(userInput)) break;
             }
         }
+
     }
 }
