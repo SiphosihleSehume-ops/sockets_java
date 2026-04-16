@@ -6,7 +6,8 @@ import java.net.*;
 public class Client {
     static void main(String[] args) throws IOException {
         //Unique: Declare and initialize `localhost`
-        String host = "localhost";
+//        executionservice
+        String host = "127.8.8.8";
         int port = 9090;
 
         try (//Instantiate client socket
@@ -26,6 +27,7 @@ public class Client {
             while ((userInput = stdIn.readLine()) != null) {
                 //Send data to server
                 out.println(userInput);
+
 
                 //Wait for server responsive
                 String response = in.readLine();

@@ -3,11 +3,12 @@ import java.io.*;
 import java.net.*;
 
 public class Server {
-    public static void main(String[] cmdArgs) throws IOException{
+    public static void main(String[] cmdArgs) throws IOException {
+
         //Declare and initialize port number
         int port = 9090;
         //We instantiate a ServerSocket object; "Turns on Server" at a specific entrance gate (port)
-        ServerSocket serverSocket = new ServerSocket(port);
+        @SuppressWarnings("resource") ServerSocket serverSocket = new ServerSocket(port);
         System.out.println("Server listening on port " + port);
 
         while (true) {  //Handling multiple clients one by one
@@ -23,7 +24,7 @@ public class Server {
             ) {
                 //Crucial; line for logging and debugging; `getInetAddress` pulls the IP Address
                 //Java automatically calls the `.toString()` method on Ip Address object
-                System.out.println("Client connected: " + clientSocket.getInetAddress());
+                System.out.println("Client connected: " + clientSocket.getInetAddress().getHostName());
 
                 /* Summary notes:
                 1. Waits for client
